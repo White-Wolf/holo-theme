@@ -1,0 +1,99 @@
+@import "ui-variables";
+@tab-radius: 0;
+@modified-icon-width: 8px;
+@tab-top-padding: 0;
+@tab-bottom-border-height: 0;
+@tab-border: 0;
+@tab-bar-bottom-border-color: #111;
+
+
+.tab-bar,
+.tab-bar.list-inline {
+    height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    background: @tab-bar-background-color;
+    padding: 0 13px 0 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid @tab-bar-border-color;
+
+    .tab {
+        position: relative;
+        top: @tab-top-padding;
+        height: @tab-height;
+        line-height: @tab-height;
+        color: @text-color-subtle;
+        padding-left: 15px;
+        background: @tab-background-color;
+        border-top-right-radius: @tab-radius;
+        transition: color .1s ease-in, border-bottom-color .3s ease-in, border-bottom-width .1s ease-in;
+        border: none;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: @tab-border-color;
+
+        &:hover {
+            color: @text-color-highlight;
+        }
+        &.modified {
+            border-bottom-color: @tab-border-color-modified;
+
+            &:not(:hover) .close-icon {
+                top: @tab-height/2 - @modified-icon-width/2;
+                right: 14px;
+                width: @modified-icon-width;
+                height: @modified-icon-width;
+                border-color: @tab-border-color-modified;
+                background: @tab-border-color-modified;
+                box-shadow: 0 0 3px #000;
+            }
+            .close-icon {
+                color: #fff;
+                &:hover {
+                    color: @tab-border-color-modified;
+                }
+            }
+        }
+        &.active {
+            z-index: 10;
+            line-height: @tab-height - 2px;
+            color: @text-color-highlight;
+            height: @tab-height;
+            background: @tab-background-color-active;
+            border-bottom-width: 4px;
+
+            .title{
+                position: relative;
+                top: 1px;
+            }
+
+            .close-icon {
+                line-height: @tab-height;
+            }
+        }
+        &:after {
+            content: " ";
+            display: block;
+            height: 50%;
+            position: absolute;
+            top: 5px;
+            right: 0px;
+            width: 1px;
+            background: @tab-divider-color;
+        }
+        .close-icon {
+            z-index: 3;
+            line-height: @tab-height;
+            text-shadow: 0 0 3px #000;
+            color: #fff;
+            &:hover {
+                color: @tab-border-color;
+            }
+        }
+    }
+
+    .placeholder {
+        height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+        &:after {
+            top: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+        }
+    }
+}

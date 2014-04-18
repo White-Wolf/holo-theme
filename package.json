@@ -1,0 +1,20 @@
+{
+    "name": "holo-theme",
+    "theme": "ui",
+    "version": "0.0.1",
+    "description": "An Android Holo-like theme.  Partially inspired by the Sublime Text Nexus Theme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/white-wolf/holo-theme"
+    },
+    "license": "MIT",
+    "readme": "TODO",
+    "readmeFilename": "README.md",
+    "engines": {
+        "atom": ">0.50.0"
+    },
+    "bugs": {
+        "url": "https://github.com/white-wolf/holo-theme/issues"
+    },
+    "homepage": "https://github.com/white-wolf/holo-theme"
+}
